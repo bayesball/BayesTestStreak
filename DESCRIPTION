@@ -1,0 +1,10 @@
+Package: BayesTestStreak
+Type: Package
+Title: Testing Streakiness in Binary Sequences by Bayes Factors
+Version: 1.0
+Depends:  LearnBayes, ggplot2
+Date: 2014-04-08
+Author: Jim Albert
+Maintainer: Jim Albert <albert@bgsu.edu>
+Description: BayesTestStreak contains a collection of functions for comparing consistent and streaky models for a binary sequence using Bayes factors.  The methods are based on the group of spacings between consecutive successes.
+License: GPL (>= 2)
