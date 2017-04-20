@@ -8,7 +8,7 @@ Obtain binary data for streak analysis
 Extracts batting data from Retrosheet for a specific player and specific event
 }
 \usage{
-streak_data(pbpdata, pid, eventcode)
+streak_data(pbpdata, pid, eventcode, AB=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -20,6 +20,9 @@ Retroid of player
 }
 \item{eventcode}{
 Code(s) for variable EVENT_CD that indicates event
+}
+\item{AB}{
+Should one only consider official at-bats?
 }
 }
 
