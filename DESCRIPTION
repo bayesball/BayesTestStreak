@@ -4,6 +4,7 @@ Title: Testing Streakiness in Binary Sequences by Bayes Factors
 Version: 1.1
 Depends:  LearnBayes, tidyverse, stringr, lubridate, Lahman
 Date: 2016-04-20
+LazyData: yes
 Author: Jim Albert
 Maintainer: Jim Albert <albert@bgsu.edu>
 Description: BayesTestStreak contains a collection of functions for comparing consistent and streaky models for a binary sequence using Bayes factors.  The methods are based on the group of spacings between consecutive successes.
