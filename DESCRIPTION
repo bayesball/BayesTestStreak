@@ -3,6 +3,8 @@ Type: Package
 Title: Testing Streakiness in Binary Sequences by Bayes Factors
 Version: 1.1
 Depends:  LearnBayes, tidyverse, stringr, lubridate, Lahman
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
 Date: 2016-04-20
 LazyData: yes
 Author: Jim Albert

@@ -1,0 +1,78 @@
+---
+title: "Introduction to BayesTestStreak"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to BayesTestStreak}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.width=6, fig.height=4, fig.path='Figs/',
+                      echo=TRUE, warning=FALSE, message=FALSE)
+```
+
+This package provides some tools for learning about the streakiness patterns in a binary (0 and 1) sequence.
+
+We illustrate this by looking at streaky patterns of the hitter Mike Trout for the 2016 season.
+
+First load the package.
+```{r}
+library(BayesTestStreak)
+```
+
+The package contains Retrosheet play-by-play data for the 2016 season, so we can explore streaky patterns for any player that played in this season.
+
+The `find_id` function will find the Retrosheet player id for a given player.
+
+```{r}
+trout_id <- find_id("Mike Trout")
+```
+
+The function `streak_data` will find the 0/1 streak data.  The inputs are the Retrosheet data (the data frame pbp2016 is the play-by-play data that is preloaded), the player id, and the definition of success using the EVENT_CD variable.  Here values of EVENT_CD = 20 through 23 correspond to a hit.
+
+```{r}
+y_PA <- streak_data(pbp2016, trout, 20:23)
+```
+
+Maybe you want to consider hits/no hits only among the official at-bats (instead of plate appearances).  Then you use the AB = TRUE option.
+
+```{r}
+y_AB <- streak_data(pbp2016, trout, 20:23, AB=TRUE)
+```
+
+What can you do with this data?
+
+One can construct a moving average graph by the function `mavg_plot` -- the input is the vector of 0-1 data and the value of the width of the window where you are computing the average.
+
+```{r}
+mavg_plot(y_AB, width=40)
+```
+
+The function `find.spacings` computes the lengths of the gaps between consecutive successes.
+
+```{r}
+(s <- find.spacings(y_AB)$y)
+```
+
+The `geometric.plot` function constructs a geometric probability plot -- if the points line along the line, a geometric constant probability model is suitable.
+
+```{r}
+geometric.plot(s)
+```
+
+The `permutation.test` function tests (by simulation) the hypothesis that all possible ordering of the 0's and 1's are equally likely.
+
+```{r}
+permutation.test(y_AB)
+```
+
+The `bayes.factor.function` function implements a Bayes factor for testing for streakiness.  The graph plots the log Bayes factor against the parameter log K. (See my paper for details.)
+
+```{r}
+OUT <- bayes.factor.function(y_AB)
+ggplot(data.frame(logK=OUT$log.K, logBF=OUT$log.BF), 
+       aes(logK, logBF)) + geom_line()
+```
+
+
