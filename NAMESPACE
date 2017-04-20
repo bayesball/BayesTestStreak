@@ -1,1 +1,3 @@
 exportPattern("^[[:alpha:]]+")
+importFrom("graphics", "abline")
+importFrom("stats", "lm", "loess", "rbinom")
