@@ -19,7 +19,7 @@ Retrosheet event file for a particular season or seasons
 Retroid of player
 }
 \item{eventcode}{
-Code(s) for variable EVENT_CD that indicates event
+Code(s) for variable EVENT_CD that indicates event (can use "H", "HR", "SO", or sets of numeric codes)
 }
 \item{AB}{
 Should one only consider official at-bats?

@@ -1,12 +1,26 @@
 streak_data <- function(pbpdata, pid, eventcode, AB=FALSE){
-  pbpdata <- mutate(pbpdata,
+  Flag <- 0
+  F1 <- is.numeric(eventcode)
+  if(F1 == FALSE){
+    F2 <- eventcode %in% c("H", "SO", "HR")
+    if(F2 == FALSE){
+    print("Invalid event code")
+    Flag <- 1}
+  }
+  if(F1 == TRUE) ecode <- eventcode
+  if(eventcode[1] == "H") ecode <- 20:23
+  if(eventcode[1] == "SO") ecode <-  3
+  if(eventcode[1] == "HR") ecode <- 23
+
+  if(Flag == 0){
+     pbpdata <- mutate(pbpdata,
                       Date=ymd(str_sub(GAME_ID, 4, 11)),
                       Game=str_sub(GAME_ID, 12, 12))
-  filter(pbpdata, 
+     filter(pbpdata, 
            BAT_ID == pid, BAT_EVENT_FL == TRUE) %>%
       arrange(Date, Game) -> d
-  if(AB==TRUE)
-    d <- filter(d, AB_FL==TRUE)
-    
-  ifelse(d$EVENT_CD %in% eventcode, 1, 0)
+     if(AB==TRUE)
+       d <- filter(d, AB_FL==TRUE)
+     ifelse(d$EVENT_CD %in% ecode, 1, 0)
+  }
 }
