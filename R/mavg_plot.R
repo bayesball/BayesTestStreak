@@ -15,8 +15,9 @@ mavg_plot <- function(y, width=20){
   
   y_ma$AVG <- mean(y)
   
-  p <- ggplot(y_ma, aes(x=Index, ymax=Average, ymin=AVG)) +
-    geom_ribbon(fill = "blue") +
+  p <- ggplot(y_ma,
+        aes(x=Index, ymax=Average, ymin=AVG)) +
+    geom_ribbon(fill="blue") +
     theme_minimal()
   
   p
