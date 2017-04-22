@@ -9,13 +9,13 @@ library(BayesTestStreak)
 trout_id <- find_id("Mike Trout")
 
 ## ------------------------------------------------------------------------
-(y_PA <- streak_data(pbp2016, trout, 20:23))
+(y_PA <- streak_data(pbp2016, trout_id, 20:23))
 
 ## ------------------------------------------------------------------------
-y_PA <- streak_data(pbp2016, trout, "H")
+y_PA <- streak_data(pbp2016, trout_id, "H")
 
 ## ------------------------------------------------------------------------
-y_AB <- streak_data(pbp2016, trout, "H", AB=TRUE)
+y_AB <- streak_data(pbp2016, trout_id, "H", AB=TRUE)
 
 ## ------------------------------------------------------------------------
 mavg_plot(y_AB, width=40)

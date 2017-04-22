@@ -37,19 +37,19 @@ trout_id <- find_id("Mike Trout")
 The function `streak_data` will find the 0/1 streak data.  The inputs are the Retrosheet data (the data frame pbp2016 is the play-by-play data that is preloaded), the player id, and the definition of success using the EVENT_CD variable.  Here values of EVENT_CD = 20 through 23 correspond to a hit.  The output is a vector of 0's and 1's where 0 is an out and 1 is a hit.
 
 ```{r}
-(y_PA <- streak_data(pbp2016, trout, 20:23))
+(y_PA <- streak_data(pbp2016, trout_id, 20:23))
 ```
 
 This function will accept the non-numeric codes "H", "SO", or "HR", so the following inputs will produce the same data.
 
 ```{r}
-y_PA <- streak_data(pbp2016, trout, "H")
+y_PA <- streak_data(pbp2016, trout_id, "H")
 ```
 
 Maybe you want to consider hits/no hits only among the official at-bats (instead of plate appearances).  Then you use the AB = TRUE option.
 
 ```{r}
-y_AB <- streak_data(pbp2016, trout, "H", AB=TRUE)
+y_AB <- streak_data(pbp2016, trout_id, "H", AB=TRUE)
 ```
 
 ### What can you do with this data?

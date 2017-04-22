@@ -7,17 +7,17 @@ mavg_plot <- function(y, width=20){
           sum(AB[indices]))
     }
     P <- data.frame(t(sapply(1: (N - width + 1), mavg)))
-    names(P) <- c("AB", "Average")
+    names(P) <- c("Index", "Average")
     P
   }
   y_ma <- moving.average(y,
                          rep(1, length(y)), width)
   
-  AVG <- mean(y)
-  y_ma$Deviation <- y_ma$Average - AVG
-  p <- ggplot(y_ma, aes(x=AB, y=Deviation)) +
-    geom_area(fill="blue") + 
-    geom_hline(yintercept=0) +
+  y_ma$AVG <- mean(y)
+  
+  p <- ggplot(y_ma, aes(x=Index, ymax=Average, ymin=AVG)) +
+    geom_ribbon(fill = "blue") +
     theme_minimal()
+  
   p
 }
