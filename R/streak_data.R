@@ -1,4 +1,4 @@
-streak_data <- function(pbpdata, pid, eventcode, AB=FALSE){
+streak_data <- function(pid, pbpdata, eventcode, AB=FALSE){
   Flag <- 0
   F1 <- is.numeric(eventcode)
   if(F1 == FALSE){
