@@ -9,6 +9,7 @@ geometric.plot <- function(y,...){
     stat_smooth(method=loess, se=FALSE, size=2, ...) +
     theme_minimal() +
     theme(axis.text = element_text(size = rel(1.5))) +
-    theme(axis.title = element_text(size = rel(1.5))) 
+    theme(axis.title = element_text(size = rel(1.5))) +
+    xlab("Spacing") + ylab("Log Frequency")
   p
 }
