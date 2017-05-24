@@ -14,15 +14,15 @@ streak_data <- function(pid, pbpdata, eventcode, AB=FALSE){
   if(eventcode[1] == "OB") ecode <- c(14:16, 20:23)
 
   if(Flag == 0){
-     pbpdata <- mutate(pbpdata,
+     pbpdata <- dplyr::mutate(pbpdata,
                       Date=ymd(str_sub(GAME_ID, 4, 11)),
                       Game=str_sub(GAME_ID, 12, 12))
-     filter(pbpdata, 
+     dplyr::filter(pbpdata, 
            BAT_ID == pid, BAT_EVENT_FL == TRUE,
            EVENT_CD != 17) %>%
-      arrange(Date, Game) -> d
+      dplyr::arrange(Date, Game) -> d
      if(AB==TRUE)
-       d <- filter(d, AB_FL==TRUE)
+       d <- dplyr::filter(d, AB_FL==TRUE)
      ifelse(d$EVENT_CD %in% ecode, 1, 0)
   }
 }

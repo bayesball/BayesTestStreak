@@ -12,11 +12,11 @@ streak_data(pbpdata, pid, eventcode, AB=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{pbpdata}{
-Retrosheet event file for a particular season or seasons
-}
   \item{pid}{
 Retroid of player
+}
+\item{pbpdata}{
+Retrosheet event file for a particular season or seasons
 }
 \item{eventcode}{
 Code(s) for variable EVENT_CD that indicates event (can use "H", "HR", "SO", "OB", or sets of numeric codes)
