@@ -1,5 +1,5 @@
 random_streak <- function(n = 50, p = 0.5, iter = 1000,
-                          stat = max){
+                          stat = sd){
   simulating <- function(){
     coinflips <- rbinom(n, size = 1, prob = p)
     out <- rle(1 - coinflips)
