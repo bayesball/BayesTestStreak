@@ -23,7 +23,7 @@ streak_data <- function(pid, pbpdata,
            BAT_ID == pid, 
            BAT_EVENT_FL == TRUE,
            EVENT_CD != 17) %>%
-      dplyr::arrange(Date, Game) -> d
+      dplyr::arrange(Date, Game, INN_CT) -> d
      if(AB==TRUE){
        d <- dplyr::filter(d, AB_FL==TRUE)
      }
