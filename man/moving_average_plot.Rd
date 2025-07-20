@@ -1,22 +1,19 @@
-\name{mavg_plot}
-\alias{mavg_plot}
+\name{moving_average_plot}
+\alias{moving_average_plot}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Moving Average Plot
 }
 \description{
-Constructs a moving average plot of a binary sequence.
+Constructs a moving average plot.
 }
 \usage{
-mavg_plot(y, width=20)
+moving_average_plot(moving_avg_df)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{y}{
-vector of 0's and 1's
-}
-  \item{width}{
-size of the window for the moving average
+  \item{moving_avg_df}{
+data frame of moving averages
 }
 }
 
@@ -28,7 +25,9 @@ Jim Albert
 }
 
 \examples{
-y <- rbinom(500, size=1, prob=0.3)
-mavg_plot(y, width=20)
+streak_data <- data.frame(N = 1:500,
+              Outcome = rbinom(500, size=1, prob=0.3))
+ma <- moving_average(streak_data, width = 50)
+moving_average_plot(ma)
 }
 

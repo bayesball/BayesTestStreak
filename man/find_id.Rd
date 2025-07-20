@@ -1,4 +1,4 @@
-\name{streak_data}
+\name{find_id}
 \alias{find_id}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{

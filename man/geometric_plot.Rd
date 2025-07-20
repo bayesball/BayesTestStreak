@@ -1,5 +1,5 @@
-\name{geometric.plot}
-\alias{geometric.plot}
+\name{geometric_plot}
+\alias{geometric_plot}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Geometric Probability Plot of a Binary Sequence
@@ -8,14 +8,14 @@ Geometric Probability Plot of a Binary Sequence
 Constructs a probability plot to visually see if a group of spacings satisfies a geometric distribution with a constant probability of success.
 }
 \usage{
-geometric.plot(y, ...)
+geometric_plot(spacings_data)
 }
 \arguments{
-  \item{y}{
-vector of spacings
+ \item{spacings_data}{
+data frame with components
+ \item{N}{index}
+ \item{Outcome}{spacings}
 }
-  \item{\dots}{
-any arguments that can be used in the stat.smooth function
 }
 }
 
@@ -30,8 +30,8 @@ Jim Albert
 }
 
 \examples{
-x <- rgeom(500, prob=0.5)
-s <- find.spacings(x)
-geometric.plot(s$y)
+spacings_data <- data.frame(N = 1:500,
+                   Spacing = rgeom(500, prob = 0.5))
+geometric_plot(spacings_data)
 }
 
