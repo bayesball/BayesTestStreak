@@ -32,7 +32,6 @@ Jim Albert
 }
 
 \examples{
-y <- rbinom(500, size=1, prob=0.3)
-mavg_plot(y, width=20)
+random_streak(n = 40, p = 0.8)
 }
 

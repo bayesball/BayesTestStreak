@@ -8,13 +8,17 @@ Rug plot of binary data
 Constructs a rug plot of a binary sequence.
 }
 \usage{
-plot_streak_data(y)
+plot_streak_data(streak_data, title = "")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{y}{
-vector of 0's and 1's
+  \item{streak_data}{
+    data frame with components
+ \item{N}{index}
+ \item{Outcome}{binary observations}
 }
+\item{title}
+  title to put on graph
 }
 
 \author{
@@ -22,7 +26,8 @@ Jim Albert
 }
 
 \examples{
-y <- rbinom(500, size=1, prob=0.3)
-plot_streak_data(y)
+streak_data <- data.frame(N = 1:500,
+Outcome = rbinom(500, size=1, prob=0.3))
+plot_streak_data(streak_data)
 }
 

@@ -27,7 +27,7 @@ Should one only consider official at-bats?
 }
 
 \value{
-vector of 0-1 data for all plate appearances in time
+data frame of 0-1 data for all plate appearances in time
 }
 \author{
 Jim Albert

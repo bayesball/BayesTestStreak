@@ -1,5 +1,5 @@
-\name{permutation.test}
-\alias{permutation.test}
+\name{permutation_test}
+\alias{permutation_test}
 \title{
 Permutation Test of a Binary Sequence
 }
@@ -7,11 +7,13 @@ Permutation Test of a Binary Sequence
 Given a binary sequence of 0's and 1's, computes the p-value of a permutation test of randomness using a simulation-based permutation test.  The sum of squared spacings is used as the measure of streakiness (the clumpiness statistic).
 }
 \usage{
-permutation.test(x, ITER = 1000)
+permutation_test(x, ITER = 1000)
 }
 \arguments{
-  \item{x}{
-vector of 0's and 1's
+\item{streak_data}{
+    data frame with components
+ \item{N}{index}
+ \item{Outcome}{binary observations}
 }
   \item{ITER}{
 number of iterations of simulation
@@ -28,6 +30,7 @@ Jim Albert
 }
 
 \examples{
-y <- rgeom(500, prob=0.3)
-permutation.test(y)
+streak_data <- data.frame(N = 1:500,
+Outcome = rgeom(500, prob=0.3))
+permutation_test(streak_data)
 }
