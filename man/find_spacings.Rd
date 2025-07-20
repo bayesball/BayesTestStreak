@@ -13,9 +13,7 @@ find.spacings(streak_data)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{streak_data}{
-data frame with components
- \item{N}{index}
- \item{Outcome}{binary observations}
+data frame with components N and Outcome
 }
 }
 

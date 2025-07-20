@@ -12,15 +12,11 @@ bayes_factor_logK(streak_data, log_K)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{streak_data}{
-data frame with components
- \item{N}{index}
- \item{Outcome}{binary observations}
-}
+\item{streak_data}{
+data frame with components N and Outcome}   
   \item{log_K}{
 vector of values of log(K) under streaky model
-}
-}
+}}
 
 \value{
 vector of log Bayes factors in support of streaky model

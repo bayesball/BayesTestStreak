@@ -13,11 +13,9 @@ moving_average(streak_data, width=20)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{streak_data}{
-data frame with components
- \item{N}{index}
- \item{Outcome}{binary observations}
+data frame with components N and Outcome
 }
-  \item{width{
+  \item{width}{
 size of the window for the moving average
 }
 }
@@ -27,14 +25,13 @@ data frame with additional variables
  \item{Average}{moving average of outcome}
  \item{AVG}{overall average}
 }
-}
 
 \references{
 Albert, J. (2013), Looking at Spacings to Access Streakiness, Journal of Quantitative Analysis of Sports, Vol 9, Issue 2, 151-163.
 }
 \author{
 Jim Albert
-}s
+}
 
 \examples{
 streak_data <- data.frame(N = 1:500,

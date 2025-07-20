@@ -11,9 +11,7 @@ permutation_test(x, ITER = 1000)
 }
 \arguments{
 \item{streak_data}{
-    data frame with components
- \item{N}{index}
- \item{Outcome}{binary observations}
+    data frame with components N and Outcome
 }
   \item{ITER}{
 number of iterations of simulation

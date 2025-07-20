@@ -13,12 +13,11 @@ plot_streak_data(streak_data, title = "")
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{streak_data}{
-    data frame with components
- \item{N}{index}
- \item{Outcome}{binary observations}
+    data frame with components N and Outcome
 }
-\item{title}
+\item{title}{
   title to put on graph
+}
 }
 
 \author{

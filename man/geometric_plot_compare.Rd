@@ -12,11 +12,7 @@ geometric_plot_compare(spacing_data)
 }
 \arguments{
   \item{spacing_data}{
-data frame with components
- \item{N}{index}
- \item{Outcome}{spacings}
- \item{BAT_ID}{player id}
-}
+data frame with components N, Outcome and BAT_ID
 }
 }
 

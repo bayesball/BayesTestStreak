@@ -12,10 +12,7 @@ geometric_plot(spacings_data)
 }
 \arguments{
  \item{spacings_data}{
-data frame with components
- \item{N}{index}
- \item{Outcome}{spacings}
-}
+data frame with components N and Outcome
 }
 }
 
