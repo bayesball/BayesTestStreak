@@ -1,13 +1,12 @@
 ---
-title: "Introduction"
-author: "Jim Albert"
-date: "2025-07-21"
-output: html_document
+title: "BayesTestStreak Package"
+format: 
+  html:
+    embed-resources: true 
+editor: visual
+author: Jim Albert
+date: July 20, 2025
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 This is an introduction to the functions in the `BayesTestStreak` R package. A general reference to the exploration of streakiness in sequences of binary response data can be found at <https://bayesball.github.io/BLOG/Streaky.html>
 
